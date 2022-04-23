@@ -9,7 +9,7 @@ function AllTodos() {
   const [todos, setTodos] = useState([]);
   useEffect(() => {
     getTodoList().then((todoRes) => {
-      setTodos(todoRes);
+      setTodos(todoRes.reverse());
     });
   }, []);
   return (
