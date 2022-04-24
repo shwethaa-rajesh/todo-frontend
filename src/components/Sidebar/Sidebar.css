@@ -1,4 +1,38 @@
 .sidebar{
     width: 40%;
+    background-color: white;
     height: 100%;
+    text-align: center;
+}
+.bitmoji{
+    border-radius: 100%;
+    width: 35%;
+    display: flex;
+    margin-left: 35%;
+    margin-top: 40%;
+    object-fit: fill;
+}
+.border{
+    width:95%;
+    height: 100%;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: solid 3px rgb(94,198,243);
+}
+.welcome-text{
+    color: rgb(94,198,243);
+    font-weight: bolder;
+    font-size: 120%;
+    margin-top: 7%;
+}
+.time{
+    margin-top: 6%;
+    font-size: 200%;
+    font-weight: 400;
+}
+.date{
+    margin-top: 2%;
+    font-size: 200%;
+    font-weight: 400;
 }
