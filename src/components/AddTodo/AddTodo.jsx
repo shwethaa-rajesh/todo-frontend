@@ -6,7 +6,7 @@ import './AddTodo.css';
 import { newTodo } from '../../utils/backend.utils';
 
 function AddTodo() {
-  const maxCount = 10;
+  const maxCount = 100;
   const [text, setText] = useState('');
   const [extraText, setExtraText] = useState('');
   const [count, setCount] = useState(maxCount);
@@ -43,8 +43,9 @@ function AddTodo() {
     <div className="add-tweet-page">
       <form onSubmit={newTodoHandler}>
 
-        <textarea
-          value={text + extraText}
+        <input
+          data-testid="testId-listNametextarea"
+          value={`${text}${extraText}`}
           style={{ color: count < 0 ? 'red' : '' }}
           onFocus={
               (e) => {
@@ -56,7 +57,6 @@ function AddTodo() {
             count > 0 ? textChangeHandler(e) : extraTextChangeHandler(e);
           }}
           type="text"
-          data-testid="testId-listNametextarea"
         />
 
         <div className="character-count">
