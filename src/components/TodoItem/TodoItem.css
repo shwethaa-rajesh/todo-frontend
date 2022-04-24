@@ -1,0 +1,12 @@
+.todo-item{
+    background-color: white;
+    padding: 4%;
+    margin-top:2%;
+    margin-bottom:2%;
+    color: rgb(127,201,227);
+    font-weight: bolder;
+    margin-left:3%;
+    border: solid 1px white;
+    border-radius: 12px;
+    margin-right :1%
+}

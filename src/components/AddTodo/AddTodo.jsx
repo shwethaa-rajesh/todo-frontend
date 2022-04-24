@@ -6,7 +6,7 @@ import './AddTodo.css';
 import { newTodo } from '../../utils/backend.utils';
 
 function AddTodo() {
-  const maxCount = 5;
+  const maxCount = 10;
   const [text, setText] = useState('');
   const [extraText, setExtraText] = useState('');
   const [count, setCount] = useState(maxCount);
@@ -24,7 +24,7 @@ function AddTodo() {
     } else if ((event.target.value.length - text.length) < extraText.length) {
       setExtraText(extraText.slice(0, event.target.value.length - text.length));
     } else {
-      event.target.style.color = 'rgb(81,14,198)';
+      event.target.style.color = 'red';
       setExtraText(((prevExtra) => prevExtra
        + (event.target.value.slice(text.length + extraText.length)
        )));
@@ -41,38 +41,31 @@ function AddTodo() {
   };
   return (
     <div className="add-tweet-page">
-      <br />
-      <br />
-
       <form onSubmit={newTodoHandler}>
-        <div>
 
-          <textarea
-            value={text + extraText}
-            style={{ color: count < 0 ? 'red' : '' }}
-            onFocus={
+        <textarea
+          value={text + extraText}
+          style={{ color: count < 0 ? 'red' : '' }}
+          onFocus={
               (e) => {
+                e.target.style.outline = 'none';
                 e.target.value = '';
               }
             }
-            onChange={(e) => {
-              count > 0 ? textChangeHandler(e) : extraTextChangeHandler(e);
-            }}
-            type="text"
-            data-testid="testId-listNametextarea"
-          >
-            dxfcgh
-          </textarea>
+          onChange={(e) => {
+            count > 0 ? textChangeHandler(e) : extraTextChangeHandler(e);
+          }}
+          type="text"
+          data-testid="testId-listNametextarea"
+        />
 
-        </div>
-        <div>
-          Number of characters left :
+        <div className="character-count">
           {count}
+          {' '}
+          characters left
           {}
         </div>
-        <br />
-        <br />
-        <button className="tweet-button" type="submit">Add Todo</button>
+        <button className="add-new-todo-button" type="submit">SUBMIT</button>
       </form>
     </div>
   );

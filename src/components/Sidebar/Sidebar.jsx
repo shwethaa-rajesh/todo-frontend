@@ -3,7 +3,7 @@ import React from 'react';
 
 function SideBar() {
   return (
-    <div className="add-tweet-page">
+    <div className="sidebar">
       <br />
       <br />
       sidebar

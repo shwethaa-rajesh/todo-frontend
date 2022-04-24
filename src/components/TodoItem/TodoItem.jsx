@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TodoItem.css';
 
 function TodoItem({ Todo }) {
   return (
-    <div className="tweet-item">
+    <div className="todo-item">
 
-      <div className="tweet-content">
-        {Todo.note}
-      </div>
+      {Todo.note}
       <br />
     </div>
   );

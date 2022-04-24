@@ -11,8 +11,6 @@ function App() {
   return (
     <div className="App">
       <SideBar headerTag={headerTag} setHeaderTag={setHeaderTag} />
-      <br />
-      <br />
       <Routes>
         <Route path="/" element={<AllTodos />} />
         <Route path="/add-todo/" element={<AddTodo />} />

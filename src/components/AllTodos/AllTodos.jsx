@@ -13,13 +13,12 @@ function AllTodos() {
     });
   }, []);
   return (
-    <div className="tweets-page">
-      <button className="add-tweet" type="button" onClick={() => { navigate('/add-todo/'); }}>
-        <div>
-          New Todo
-        </div>
-      </button>
-      <div className="tweets-container">
+    <div className="todo-page">
+      <div className="todo-header">ALL TO-DOS</div>
+      <div
+        className="todo-container"
+
+      >
 
         {
       todos.map((eachTodo) => (
@@ -28,7 +27,11 @@ function AllTodos() {
 
       }
       </div>
-
+      <button className="add-todo" type="button" onClick={() => { navigate('/add-todo/'); }}>
+        <div>
+          CREATE NEW
+        </div>
+      </button>
     </div>
   );
 }
