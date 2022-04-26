@@ -37,7 +37,7 @@ function AddTodo() {
   const newTodoHandler = (event) => {
     event.preventDefault();
     const todoObject = {
-      todocontent: text,
+      todocontent: text.slice(0, maxCount),
     };
     newTodo(todoObject).then(() => {
       navigate('/');
