@@ -28,7 +28,7 @@ describe('AddTodo ', () => {
 
   it('should show all todos', () => {
     render(component);
-    const mockTodoName = 'Test Todo Name';
+    const mockTodoName = 'Test';
     expect(screen.getByTestId('testId-listNametextarea')).toHaveAttribute(
       'value',
       '',

@@ -7,9 +7,12 @@ import './AllTodos.css';
 function AllTodos() {
   const navigate = useNavigate();
   const [todos, setTodos] = useState([]);
+  const [isEmpty, setIsEmpty] = useState(false);
   useEffect(() => {
     getTodoList().then((todoRes) => {
       setTodos(todoRes.reverse());
+    }, () => {
+      setIsEmpty(true);
     });
   }, []);
   return (
@@ -20,12 +23,10 @@ function AllTodos() {
 
       >
 
-        {
-      todos.map((eachTodo) => (
-        <TodoItem key={eachTodo.id} Todo={eachTodo} />
-      ))
-
-      }
+        {!isEmpty
+          ? todos.map((eachTodo) => (
+            <TodoItem key={eachTodo.id} Todo={eachTodo} />
+          )) : <div className="empty-todos"> NO TODOS YET</div>}
       </div>
       <button className="add-todo" type="button" onClick={() => { navigate('/add-todo/'); }}>
         <div>
